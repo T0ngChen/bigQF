@@ -200,7 +200,7 @@ pchisqsum<- function (x, df, a, lower.tail = FALSE, method=c("saddlepoint","inte
     reltol <- rep(1/1000, length(abstol))
     if (method == "integration") {
             for (i in seq(length = length(x))) {
-                f <- davies(x[i], a, df, acc = 1e-16)
+                f <- davies(x[i], a, df, acc = 1e-16, lim = 50000000)
                 if (f$ifault > 0)
                   warning("Probable loss of accuracy ")
                 guess[i] <- f$Qq
