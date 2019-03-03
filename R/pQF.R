@@ -196,7 +196,7 @@ pchisqsum<- function (x, df, a, lower.tail = FALSE, method=c("saddlepoint","inte
         method <- "saddlepoint"
     }
     abstol <- guess/1000
-    abstol <- pmax(1e-16, abstol)
+    abstol <- pmax(1e-09, abstol)
     reltol <- rep(1/1000, length(abstol))
     if (method == "integration") {
             for (i in seq(length = length(x))) {
